@@ -10,9 +10,15 @@ public class Testclass {
     @Test
     public void testFireFox(){
 
-        System.setProperty("webdriver.chrome.driver","/Users/venkateshkoyyalamudi/Downloads/chromedriver");
-        WebDriver driver= new ChromeDriver();
+        WebDriver driver=null;
 
+       if(System.getProperty("os.name").contains("Mac OS X")){
+           System.setProperty("webdriver.chrome.driver","/Users/venkateshkoyyalamudi/Downloads/chromedriver");
+           driver= new ChromeDriver();
+       }else{
+           System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
+           driver= new ChromeDriver();
+       }
         driver.manage().window().maximize();
 
         driver.get("http://www.facebook.com");
