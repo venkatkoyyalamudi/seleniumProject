@@ -2,6 +2,7 @@ package TestFacebook;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.Test;
 
@@ -17,7 +18,10 @@ public class Testclass {
            driver= new ChromeDriver();
        }else{
            System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
-           driver= new ChromeDriver();
+           ChromeOptions chromeOptions = new ChromeOptions();
+           chromeOptions.addArguments("--headless");
+           chromeOptions.addArguments("--no-sandbox");
+           driver= new ChromeDriver(chromeOptions);
        }
         driver.manage().window().maximize();
 
