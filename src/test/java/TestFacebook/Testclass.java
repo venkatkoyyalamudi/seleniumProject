@@ -24,8 +24,12 @@ public class Testclass {
            driver= new ChromeDriver(chromeOptions);
        }
         driver.manage().window().maximize();
-
-        driver.get("http://www.facebook.com");
+        if(System.getProperty("os.name").contains("Mac OS X")){
+            driver.get("http://www.facebook.com");
+        }else{
+            driver.get("http://ec2-34-216-162-61.us-west-2.compute.amazonaws.com:8080/");
+            System.out.println("get title of page"+driver.getTitle());
+        }
 
         driver.quit();
     }
