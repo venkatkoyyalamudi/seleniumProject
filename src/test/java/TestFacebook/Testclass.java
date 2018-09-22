@@ -28,7 +28,7 @@ public class Testclass {
             driver.get("http://www.facebook.com");
             System.out.println("get title of page"+driver.getTitle());
         }else{
-            driver.get("http://ec2-34-216-162-61.us-west-2.compute.amazonaws.com:8080/helloWorld-1.0.0/");
+            driver.get("http://ec2-34-216-131-98.us-west-2.compute.amazonaws.com:8080/helloWorld-1.0.0");
             System.out.println("get title of page"+driver.getTitle());
         }
 
